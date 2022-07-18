@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script language="javascript" type="text/javascript" src="lib/p5.js"></script>
+    <script language="javascript" type="text/javascript" src="lib/socket.io.js"></script>
+    <script language="javascript" type="text/javascript" src="lib/peerjs.min.js"></script>
+
+    <link rel="stylesheet" href="styles.css">
+
+    <script language="javascript" type="text/javascript" src="script.js" defer></script>
+    <script language="javascript" type="text/javascript" src="Piece.js" defer></script>
+    <script language="javascript" type="text/javascript" src="Movement.js" defer></script>
+    <script language="javascript" type="text/javascript" src="sketch.js"></script>
+    
+    <title>Online Chess</title>
+    <link rel="shortcut icon" type="image/jpg" href="assets/2000px-Chess_Pieces_Sprite_10.png"/>
+
+</head>
+<body>
+
+    <nav style="background-color: rgb(0,0, 0, 0.6);">
+          <div style="display: flex; justify-content: center; font-size: 60px; color : white">♞ CHESS ♘</div>
+    </nav>
+    <br>
+    
+
+        <!-- form data -->
+        <section id="theform">
+            <article id="one">
+                <div id="f3">Welcome to Online Chess</div><br><br>
+                <form id="myform">
+                    <input type="text" id="name" placeholder="Your Name .." required><br><br>
+                    <input type="text" id="room" placeholder="Room" required><br><br>
+                    <button id="s-button" type="submit" onclick="myclick()" >PLAY</button>
+                </form>
+            </article>
+        </section>
+
+        <!-- form data end -->
+
+        <!-- chess board and video -->
+        <section id="sec">
+        <article id="two" style="display: flex; flex-direction: column;">
+            <!-- add colors -->
+            <!-- <button type="submit">Color</button> -->
+            <div style="padding-left: 35px;">
+                <ul>
+                    <li><button type="submit" onclick="mycolor('Classic')">Classic</button></li>
+                    <li><button type="submit" onclick="mycolor('Blue')">Blue</button></li>
+                    <li><button type="submit" onclick="mycolor('Wood')">Wood</button></li>
+                    <li><button type="submit" onclick="mycolor('Teal')">Teal</button></li>
+                </ul>
+            </div>
+
+
+            <div id="sketch-holder" style="padding: 10px">
+                <!-- sketch goes here -->
+            </div>
+            <div style="display: flex; justify-content: space-evenly; width: 100%">
+                <!-- <div id="play-again"></div> -->
+                <div id="leave-btn"></div>
+            </div>
+        </article>
+
+        
+        <article id="three">
+
+            <div id="f1"></div><br>
+            <div id="video-grid">
+                <!-- video goes here -->
+                <div id="f1-vid"></div>
+                <div id="f2-vid"></div>
+            </div>
+            <br><br>
+            <div id="f2"></div>
+            
+        </article>
+    </section>
+    
+    <!-- chess board and video end -->
+    
+
+
+</body>
+<!-- <footer>Copyright Ⓒ Arijit Dutta</footer>  play again ⭯ -->
+</html>
