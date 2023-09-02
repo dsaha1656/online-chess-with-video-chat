@@ -2,18 +2,18 @@ const express = require('express');
 const app = express();
 const server = require('http').createServer(app)
 const io = require('socket.io')(server);
+const path = require("path");
 
-const port = process.env.PORT || 3000;
+require('dotenv').config();
 
-const cors = require('cors');
-app.use(cors());
+const port = process.env.PORT || 3001;
+
+app.use(express.static(path.join(__dirname, 'public')));
 
 
-app.get('/', (req, res) => {
-    res.status(200).send('<h1>Server is fucked up ❤️</h1>');
-    // res.redirect(`/${uuidV4()}`);
-});
-
+app.get('/', function(req, res) {
+    res.sendFile(path.join(__dirname, 'public/index.html'));
+});  
 
 const { addUser, removeUser, getUser, getUsersInRoom } = require('./users');
 

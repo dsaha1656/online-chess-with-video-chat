@@ -1,5 +1,5 @@
 //=================================================================================================
-const socket = io('<add_your_own_server>', {transports: ['websocket', 'polling', 'flashsocket']});
+const socket = io(window.location.host, {transports: ['websocket', 'polling', 'flashsocket']});
 //=================================================================================================
 
 socket.on('connection')
